@@ -18,9 +18,9 @@ class AuditlogLog(models.Model):
     line_ids = fields.One2many(
         'auditlog.log.line', 'log_id', string="Fields updated")
     http_session_id = fields.Many2one(
-        'auditlog.http.session', string="Session")
+        'auditlog.http.session', string="Session", index=True)
     http_request_id = fields.Many2one(
-        'auditlog.http.request', string="HTTP Request")
+        'auditlog.http.request', string="HTTP Request", index=True)
     log_type = fields.Selection(
         [('full', "Full log"),
          ('fast', "Fast log"),
